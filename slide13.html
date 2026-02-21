@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+
+<html lang="ro">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Avantaje pe Termen Lung: Statistici și Impact</title>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet"/>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&amp;family=Open+Sans:wght@400;600&amp;display=swap" rel="stylesheet"/>
+<style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Open Sans', sans-serif;
+            background-color: #f3f4f6;
+            color: #333;
+        }
+        .slide-container {
+            width: 1280px;
+            height: 720px;
+            position: relative;
+            overflow: hidden;
+            background-color: #ffffff;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Background Gradient Alternative (Solid Colors + Shapes) */
+        .bg-shape-top {
+            position: absolute;
+            top: -150px;
+            right: -100px;
+            width: 600px;
+            height: 600px;
+            background-color: #ecfdf5; /* emerald-50 */
+            border-radius: 50%;
+            z-index: 0;
+        }
+        .bg-shape-bottom {
+            position: absolute;
+            bottom: -100px;
+            left: -100px;
+            width: 400px;
+            height: 400px;
+            background-color: #f0fdf4; /* green-50 */
+            border-radius: 50%;
+            z-index: 0;
+        }
+
+        .content-wrapper {
+            position: relative;
+            z-index: 10;
+            flex: 1;
+            padding: 50px 70px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        h1 {
+            font-family: 'Montserrat', sans-serif;
+            color: #065f46; /* emerald-800 */
+            margin-bottom: 10px;
+        }
+
+        .header-line {
+            width: 100px;
+            height: 6px;
+            background-color: #10b981; /* emerald-500 */
+            border-radius: 3px;
+            margin-bottom: 30px;
+        }
+
+        /* Key Number Cards */
+        .key-metrics-row {
+            display: flex;
+            gap: 25px;
+            margin-bottom: 40px;
+        }
+
+        .metric-card {
+            flex: 1;
+            background: white;
+            border-radius: 16px;
+            padding: 25px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            border-top: 5px solid #10b981;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .metric-value {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: #10b981; /* emerald-500 */
+            margin-bottom: 5px;
+            line-height: 1.1;
+        }
+
+        .metric-label {
+            font-size: 1rem;
+            font-weight: 600;
+            color: #374151; /* gray-700 */
+            margin-bottom: 8px;
+        }
+
+        .metric-desc {
+            font-size: 0.85rem;
+            color: #6b7280; /* gray-500 */
+            line-height: 1.4;
+        }
+
+        /* Detailed Section with Chart & List */
+        .details-container {
+            display: flex;
+            gap: 40px;
+            flex: 1;
+        }
+
+        .chart-section {
+            flex: 1;
+            background: white;
+            border-radius: 16px;
+            padding: 20px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .chart-title {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: #1f2937;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+
+        .benefits-list-section {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .benefit-group {
+            margin-bottom: 20px;
+        }
+
+        .group-title {
+            display: flex;
+            align-items: center;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+            color: #064e3b;
+        }
+
+        .group-icon {
+            margin-right: 12px;
+            width: 36px;
+            height: 36px;
+            background-color: #d1fae5;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #059669;
+            font-size: 1.1rem;
+        }
+
+        .benefit-text {
+            color: #4b5563;
+            font-size: 0.95rem;
+            line-height: 1.5;
+            padding-left: 48px;
+        }
+
+        .chart-wrapper {
+            flex: 1;
+            position: relative;
+            width: 100%;
+            min-height: 200px;
+        }
+    </style>
+</head>
+<body>
+<div class="slide-container">
+<div class="bg-shape-top"></div>
+<div class="bg-shape-bottom"></div>
+<div class="content-wrapper">
+<div>
+<h1 class="text-4xl font-extrabold">Avantaje pe Termen Lung: Statistici și Impact</h1>
+<div class="header-line"></div>
+</div>
+<!-- Key Metrics Cards -->
+<div class="key-metrics-row">
+<!-- Metric 1 -->
+<div class="metric-card">
+<div class="metric-value">5-7 Ani</div>
+<div class="metric-label">Amortizare Investiție</div>
+<p class="metric-desc">Timp estimat de recuperare a costurilor pentru un sistem de 5kWp.</p>
+</div>
+<!-- Metric 2 -->
+<div class="metric-card" style="border-top-color: #3b82f6;">
+<div class="metric-value" style="color: #3b82f6;">6.5 MWh</div>
+<div class="metric-label">Producție Anuală Medie</div>
+<p class="metric-desc">Energie generată estimativ de un sistem fotovoltaic de 5 kWp în România.</p>
+</div>
+<!-- Metric 3 -->
+<div class="metric-card" style="border-top-color: #f59e0b;">
+<div class="metric-value" style="color: #f59e0b;">~60%</div>
+<div class="metric-label">Economie Apă Caldă</div>
+<p class="metric-desc">Procent anual din necesarul de ACM acoperit de panouri solare termice.</p>
+</div>
+<!-- Metric 4 -->
+<div class="metric-card" style="border-top-color: #10b981;">
+<div class="metric-value">3 tone</div>
+<div class="metric-label">CO2 Evitat Anual</div>
+<p class="metric-desc">Reducerea amprentei de carbon echivalentă cu plantarea a 150 de copaci.</p>
+</div>
+</div>
+<!-- Details Section -->
+<div class="details-container">
+<!-- Left: Benefits List -->
+<div class="benefits-list-section">
+<!-- Economic -->
+<div class="benefit-group">
+<div class="group-title">
+<div class="group-icon"><i class="fas fa-coins"></i></div>
+<h3>Impact Economic</h3>
+</div>
+<p class="benefit-text">
+                        Reducerea facturilor la utilități cu până la 90%, protecție împotriva inflației energetice și creșterea valorii de piață a imobilului eficientizat.
+                    </p>
+</div>
+<!-- Resilience -->
+<div class="benefit-group">
+<div class="group-title">
+<div class="group-icon" style="background-color: #dbeafe; color: #2563eb;"><i class="fas fa-shield-alt"></i></div>
+<h3 style="color: #1e3a8a;">Reziliență și Stabilitate</h3>
+</div>
+<p class="benefit-text">
+                        Sistemele hibride oferă backup la pene de curent. Independență parțială față de rețea și predictibilitate a costurilor pe termen lung (25+ ani).
+                    </p>
+</div>
+</div>
+<!-- Right: Chart Visualization -->
+<div class="chart-section">
+<h3 class="chart-title">Economii Cumulative vs. Cost Rețea (10 Ani)</h3>
+<div class="chart-wrapper">
+<canvas id="roiChart"></canvas>
+</div>
+<p class="text-xs text-center text-gray-400 mt-2">*Estimare bazată pe prețuri medii energie și inflație anuală 5%.</p>
+</div>
+</div>
+</div>
+</div>
+<script>
+    const ctx = document.getElementById('roiChart').getContext('2d');
+    const roiChart = new Chart(ctx, {
+        type: 'line',
+        data: {
+            labels: ['An 1', 'An 2', 'An 3', 'An 4', 'An 5', 'An 6', 'An 7', 'An 8', 'An 9', 'An 10'],
+            datasets: [
+                {
+                    label: 'Cost Energie Rețea (fără PV)',
+                    data: [5000, 10500, 16500, 23000, 30000, 37500, 45500, 54000, 63000, 72500],
+                    borderColor: '#ef4444', // red-500
+                    backgroundColor: 'rgba(239, 68, 68, 0.1)',
+                    borderWidth: 2,
+                    tension: 0.4,
+                    fill: true
+                },
+                {
+                    label: 'Cost Energie cu Sistem PV',
+                    data: [35000, 35500, 36000, 36500, 37000, 37500, 38000, 38500, 39000, 39500], // Start high (investment), then flat
+                    borderColor: '#10b981', // emerald-500
+                    backgroundColor: 'rgba(16, 185, 129, 0.1)',
+                    borderWidth: 3,
+                    tension: 0.4,
+                    fill: true
+                }
+            ]
+        },
+        options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            plugins: {
+                legend: {
+                    position: 'bottom',
+                    labels: {
+                        font: { family: "'Open Sans', sans-serif", size: 11 },
+                        usePointStyle: true,
+                        boxWidth: 8
+                    }
+                },
+                tooltip: {
+                    mode: 'index',
+                    intersect: false,
+                }
+            },
+            scales: {
+                y: {
+                    beginAtZero: true,
+                    title: { display: true, text: 'RON (Cumulativ)' },
+                    grid: { color: '#f3f4f6' }
+                },
+                x: {
+                    grid: { display: false }
+                }
+            },
+            interaction: {
+                mode: 'nearest',
+                axis: 'x',
+                intersect: false
+            }
+        }
+    });
+</script>
+</body>
+</html>

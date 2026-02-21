@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+
+<html lang="ro">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Măsuri Rapide de Economisire a Energiei Electrice</title>
+<link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet"/>
+<link href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&amp;family=Open+Sans:wght@400;600&amp;display=swap" rel="stylesheet"/>
+<style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Open Sans', sans-serif;
+            background-color: #f3f4f6;
+            color: #333;
+        }
+        .slide-container {
+            width: 1280px;
+            height: 720px;
+            position: relative;
+            overflow: hidden;
+            background-color: #ffffff;
+            display: flex;
+            flex-direction: column;
+        }
+        /* Top abstract shape */
+        .top-shape {
+            position: absolute;
+            top: -120px;
+            right: -80px;
+            width: 550px;
+            height: 550px;
+            background-color: #ecfdf5; /* emerald-50 */
+            border-radius: 50%;
+            z-index: 0;
+            opacity: 0.8;
+        }
+        /* Bottom abstract shape */
+        .bottom-shape {
+            position: absolute;
+            bottom: -60px;
+            left: -60px;
+            width: 350px;
+            height: 350px;
+            background-color: #f0fdf4; /* green-50 */
+            border-radius: 50%;
+            z-index: 0;
+            opacity: 0.8;
+        }
+        .content-wrapper {
+            position: relative;
+            z-index: 10;
+            flex: 1;
+            padding: 50px 80px;
+            display: flex;
+            flex-direction: column;
+        }
+        h1 {
+            font-family: 'Montserrat', sans-serif;
+            color: #065f46; /* emerald-800 */
+        }
+        .header-line {
+            width: 100px;
+            height: 6px;
+            background-color: #10b981; /* emerald-500 */
+            margin-top: 15px;
+            margin-bottom: 30px;
+            border-radius: 3px;
+        }
+        .grid-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            flex: 1;
+        }
+        .info-card {
+            background-color: white;
+            border-radius: 16px;
+            padding: 25px;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+            border-left: 6px solid #10b981; /* default emerald */
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            height: 100%;
+            transition: transform 0.2s ease;
+        }
+        .icon-circle {
+            width: 55px;
+            height: 55px;
+            background-color: #d1fae5;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 0;
+            color: #059669;
+            font-size: 22px;
+        }
+        .card-header {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 12px;
+        }
+        .card-title {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: #1f2937; /* gray-800 */
+            margin: 0;
+        }
+        .card-text {
+            color: #4b5563; /* gray-600 */
+            line-height: 1.5;
+            font-size: 0.95rem;
+            margin: 0;
+        }
+        .footer-note {
+            margin-top: auto;
+            padding-top: 15px;
+            font-size: 0.9rem;
+            color: #6b7280; /* gray-500 */
+            border-top: 1px solid #e5e7eb;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        /* Custom border colors */
+        .card-yellow { border-left-color: #f59e0b; }
+        .icon-yellow { background-color: #fef3c7; color: #d97706; }
+        
+        .card-red { border-left-color: #ef4444; }
+        .icon-red { background-color: #fee2e2; color: #dc2626; }
+        
+        .card-blue { border-left-color: #3b82f6; }
+        .icon-blue { background-color: #dbeafe; color: #2563eb; }
+        
+        .card-emerald { border-left-color: #10b981; }
+        .icon-emerald { background-color: #d1fae5; color: #059669; }
+    </style>
+</head>
+<body>
+<div class="slide-container">
+<div class="top-shape"></div>
+<div class="bottom-shape"></div>
+<div class="content-wrapper">
+<div>
+<h1 class="text-4xl font-extrabold mb-1">Măsuri Rapide de Economisire a Energiei</h1>
+<div class="header-line"></div>
+</div>
+<div class="grid-container">
+<!-- Left Column -->
+<div class="flex flex-col gap-5">
+<!-- Card 1: Iluminat -->
+<div class="info-card card-yellow">
+<div class="card-header">
+<div class="icon-circle icon-yellow flex-shrink-0">
+<i class="fas fa-lightbulb"></i>
+</div>
+<h3 class="card-title">Iluminat LED &amp; Natural</h3>
+</div>
+<div class="card-text">
+<p>Înlocuiește becurile clasice cu <strong>LED-uri</strong> pentru o reducere a consumului de până la 90%. Valorifică la maximum <strong>lumina naturală</strong> prin folosirea de draperii deschise la culoare și instalează senzori de mișcare în holuri sau garaje.</p>
+</div>
+</div>
+<!-- Card 2: Standby -->
+<div class="info-card card-red">
+<div class="card-header">
+<div class="icon-circle icon-red flex-shrink-0">
+<i class="fas fa-power-off"></i>
+</div>
+<h3 class="card-title">Eliminare Consum "Vampir"</h3>
+</div>
+<div class="card-text">
+<p>Aparatele în <strong>standby</strong> pot reprezenta până la 10% din factură. Scoate din priză încărcătoarele, laptopurile și televizoarele când nu sunt folosite, sau utilizează <strong>prelungitoare cu întrerupător</strong> pentru a opri alimentarea complet.</p>
+</div>
+</div>
+</div>
+<!-- Right Column -->
+<div class="flex flex-col gap-5">
+<!-- Card 3: Electrocasnice -->
+<div class="info-card card-blue">
+<div class="card-header">
+<div class="icon-circle icon-blue flex-shrink-0">
+<i class="fas fa-plug"></i>
+</div>
+<h3 class="card-title">Electrocasnice &amp; ECO</h3>
+</div>
+<div class="card-text">
+<p>Optează pentru electrocasnice clasa <strong>A+++</strong>. Folosește programele <strong>ECO</strong> la mașinile de spălat și asigură-te că sunt încărcate complet. Setează frigiderul la 3-4°C și congelatorul la -18°C pentru un raport optim consum-răcire.</p>
+</div>
+</div>
+<!-- Card 4: Întreținere -->
+<div class="info-card card-emerald">
+<div class="card-header">
+<div class="icon-circle icon-emerald flex-shrink-0">
+<i class="fas fa-tools"></i>
+</div>
+<h3 class="card-title">Întreținere Periodică</h3>
+</div>
+<div class="card-text">
+<p>Curăță filtrele aparatelor de aer condiționat și grila din spatele frigiderului de praf pentru a menține eficiența. Degivrează congelatorul regulat; un strat de gheață de doar 3mm poate crește consumul cu 30%.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="footer-note">
+<p><i class="fas fa-check-circle mr-2 text-green-600"></i> Aceste măsuri simple pot reduce factura lunară cu până la 20-30%.</p>
+<p class="font-bold text-green-800">#EconomisireInteligentă</p>
+</div>
+</div>
+</div>
+</body>
+</html>

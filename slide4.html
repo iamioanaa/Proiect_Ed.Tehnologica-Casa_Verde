@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+
+<html lang="ro">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Acte Necesare - Programul Casa Verde</title>
+<link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet"/>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&amp;family=Open+Sans:wght@400;600&amp;display=swap" rel="stylesheet"/>
+<style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Open Sans', sans-serif;
+            background-color: #f3f4f6;
+        }
+        .slide-container {
+            width: 1280px;
+            height: 720px;
+            position: relative;
+            overflow: hidden;
+            background-color: #ffffff;
+            display: flex;
+            flex-direction: row;
+        }
+        /* Left Panel - Image/Brand */
+        .left-panel {
+            width: 35%;
+            height: 100%;
+            position: relative;
+            overflow: hidden;
+        }
+        .bg-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 1;
+        }
+        .left-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(6, 95, 70, 0.9); /* emerald-800 slightly darker for contrast */
+            z-index: 2;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 40px;
+            color: white;
+        }
+        /* Right Panel - Content */
+        .right-panel {
+            width: 65%;
+            height: 100%;
+            padding: 50px 60px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            background-color: #f9fafb; /* gray-50 */
+        }
+        h1 {
+            font-family: 'Montserrat', sans-serif;
+            color: #064e3b; /* emerald-900 */
+        }
+        h2 {
+            font-family: 'Montserrat', sans-serif;
+        }
+        .checklist-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 20px;
+            background-color: white;
+            padding: 16px;
+            border-radius: 12px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            transition: transform 0.2s ease;
+            border-left: 5px solid transparent;
+        }
+        .checklist-item:hover {
+            transform: translateX(5px);
+            border-left-color: #34d399; /* emerald-400 */
+        }
+        .check-icon {
+            width: 32px;
+            height: 32px;
+            background-color: #d1fae5; /* emerald-100 */
+            color: #059669; /* emerald-600 */
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 16px;
+            flex-shrink: 0;
+            font-size: 16px;
+        }
+        .item-content h3 {
+            margin: 0 0 4px 0;
+            font-size: 1.1rem;
+            color: #1f2937; /* gray-800 */
+            font-weight: 600;
+        }
+        .item-content p {
+            margin: 0;
+            font-size: 0.95rem;
+            color: #4b5563; /* gray-600 */
+            line-height: 1.4;
+        }
+        /* Special style for the tip item */
+        .checklist-item.tip-item {
+            border-left: 5px solid #3b82f6; /* blue-500 */
+            background-color: #eff6ff; /* blue-50 */
+        }
+        .checklist-item.tip-item .check-icon {
+            background-color: #dbeafe; /* blue-100 */
+            color: #2563eb; /* blue-600 */
+        }
+        
+        .decorative-dots {
+            position: absolute;
+            bottom: 30px;
+            right: 30px;
+            display: flex;
+            gap: 8px;
+        }
+        .dot {
+            width: 12px;
+            height: 12px;
+            background-color: #e5e7eb;
+            border-radius: 50%;
+        }
+        .dot.active {
+            background-color: #10b981;
+        }
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 6px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: #f1f1f1; 
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #d1d5db; 
+            border-radius: 3px;
+        }
+    </style>
+</head>
+<body>
+<div class="slide-container">
+<!-- Left Panel with Image & Title Summary -->
+<div class="left-panel">
+<img alt="Documente si planificare" class="bg-image" src="https://page.gensparksite.com/slides_images/96d72948efc5bd537128cf914c34699f.webp"/>
+<div class="left-overlay">
+<div class="mb-6">
+<i class="fas fa-folder-open text-5xl text-green-300 mb-4"></i>
+<h2 class="text-4xl font-bold mb-2">Documentație Completă</h2>
+<div class="w-16 h-1 bg-green-400 rounded"></div>
+</div>
+<p class="text-lg text-gray-200 leading-relaxed">
+                    Pregătirea corectă a dosarului este cheia succesului. Asigură-te că toate documentele sunt scanate lizibil și sunt în termenul de valabilitate la data înscrierii.
+                </p>
+<div class="mt-auto pt-8 border-t border-green-700 text-sm text-green-200">
+<p><i class="fas fa-exclamation-triangle mr-2"></i> Documentele expirate atrag respingerea automată a dosarului.</p>
+</div>
+</div>
+</div>
+<!-- Right Panel with Checklist -->
+<div class="right-panel">
+<div class="mb-6">
+<h1 class="text-4xl font-extrabold mb-2 text-gray-900">Acte Necesare (Orientativ)</h1>
+<p class="text-gray-500 text-lg">Pregătește documentele în format digital (PDF)</p>
+</div>
+<div class="flex flex-col flex-1 overflow-y-auto pr-2 custom-scrollbar">
+<!-- Item 1 -->
+<div class="checklist-item">
+<div class="check-icon">
+<i class="fas fa-id-card"></i>
+</div>
+<div class="item-content">
+<h3>Actul de Identitate (CI)</h3>
+<p>Copia actului de identitate al solicitantului (și al coproprietarilor, dacă este cazul). Trebuie să fie valabil la data înscrierii.</p>
+</div>
+</div>
+<!-- Item 2 -->
+<div class="checklist-item">
+<div class="check-icon">
+<i class="fas fa-file-signature"></i>
+</div>
+<div class="item-content">
+<h3>Actul de Proprietate &amp; Extras CF</h3>
+<p>Extras de Carte Funciară (nu mai vechi de 60 de zile) care să ateste dreptul de proprietate asupra imobilului rezidențial.</p>
+</div>
+</div>
+<!-- Item 3 -->
+<div class="checklist-item">
+<div class="check-icon">
+<i class="fas fa-university"></i>
+</div>
+<div class="item-content">
+<h3>Certificate Fiscale (Fără Datorii)</h3>
+<p>Două certificate fiscale: unul de la Direcția Taxe și Impozite (local) și unul de la ANAF (buget de stat), ambele atestând lipsa datoriilor.</p>
+</div>
+</div>
+<!-- Item 4 -->
+<div class="checklist-item">
+<div class="check-icon">
+<i class="fas fa-pencil-alt"></i>
+</div>
+<div class="item-content">
+<h3>Declarații și Cerere de Finanțare</h3>
+<p>Formulare specifice AFM completate în aplicație sau semnate olograf/electronic, conform ghidului specific ediției.</p>
+</div>
+</div>
+<!-- Item 5 - Tip Item -->
+<div class="checklist-item tip-item">
+<div class="check-icon">
+<i class="fas fa-lightbulb"></i>
+</div>
+<div class="item-content">
+<h3>Sfaturi Practice pentru Validare</h3>
+<p>Scanează documentele la rezoluție bună, denumește fișierele clar (ex: <i>CI_Popescu.pdf</i>) și verifică dimensiunea maximă admisă per fișier.</p>
+</div>
+</div>
+</div>
+<div class="decorative-dots">
+<div class="dot"></div>
+<div class="dot active"></div>
+<div class="dot"></div>
+</div>
+</div>
+</div>
+</body>
+</html>

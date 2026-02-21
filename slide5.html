@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+
+<html lang="ro">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Procesul de Aplicare - Timeline 5 Pași</title>
+<link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet"/>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&amp;family=Open+Sans:wght@400;600&amp;display=swap" rel="stylesheet"/>
+<style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Open Sans', sans-serif;
+            background-color: #f3f4f6;
+            color: #333;
+        }
+        .slide-container {
+            width: 1280px;
+            height: 720px;
+            position: relative;
+            overflow: hidden;
+            background-color: #ffffff;
+            display: flex;
+            flex-direction: column;
+        }
+        /* Top Background Decoration */
+        .header-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 240px;
+            background-color: #ecfdf5; /* emerald-50 */
+            z-index: 0;
+            border-bottom-right-radius: 50% 100px;
+            border-bottom-left-radius: 50% 100px;
+        }
+        .content-wrapper {
+            position: relative;
+            z-index: 10;
+            flex: 1;
+            padding: 50px 60px;
+            display: flex;
+            flex-direction: column;
+        }
+        h1 {
+            font-family: 'Montserrat', sans-serif;
+            color: #065f46; /* emerald-800 */
+            margin-bottom: 10px;
+            text-align: center;
+        }
+        .subtitle {
+            text-align: center;
+            color: #4b5563; /* gray-600 */
+            font-size: 1.2rem;
+            margin-bottom: 60px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        /* Timeline Container */
+        .timeline-container {
+            flex: 1;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            position: relative;
+            padding: 0 40px;
+            margin-top: 20px;
+        }
+        /* Connecting Line */
+        .timeline-line {
+            position: absolute;
+            top: 50px; /* Aligned with icon center */
+            left: 80px;
+            right: 80px;
+            height: 4px;
+            background-color: #e5e7eb; /* gray-200 */
+            z-index: 0;
+        }
+        .timeline-progress {
+            position: absolute;
+            top: 50px;
+            left: 80px;
+            width: 0%; /* Can be animated */
+            height: 4px;
+            background-color: #10b981; /* emerald-500 */
+            z-index: 1;
+            transition: width 1s ease-in-out;
+            animation: progress-fill 2s forwards;
+        }
+        @keyframes progress-fill {
+            to { width: 85%; }
+        }
+
+        /* Timeline Step */
+        .step-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            position: relative;
+            z-index: 2;
+            width: 180px;
+            text-align: center;
+        }
+        .step-icon-wrapper {
+            width: 100px;
+            height: 100px;
+            background-color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            border: 4px solid #fff;
+            position: relative;
+            transition: transform 0.3s ease;
+        }
+        .step-item:hover .step-icon-wrapper {
+            transform: translateY(-5px);
+            border-color: #d1fae5;
+        }
+        .step-number {
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 30px;
+            height: 30px;
+            background-color: #059669; /* emerald-600 */
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 14px;
+            border: 2px solid white;
+        }
+        .step-icon {
+            font-size: 36px;
+            color: #10b981; /* emerald-500 */
+        }
+        .step-title {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            color: #1f2937; /* gray-800 */
+            margin-bottom: 8px;
+            font-size: 1.1rem;
+            line-height: 1.3;
+        }
+        .step-desc {
+            font-size: 0.9rem;
+            color: #6b7280; /* gray-500 */
+            line-height: 1.4;
+        }
+        /* Footer Info */
+        .footer-info {
+            margin-top: auto;
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid #f3f4f6;
+            color: #9ca3af;
+            font-size: 0.85rem;
+        }
+        /* Specific Icon Colors for visual distinction */
+        .step-item:nth-child(1) .step-icon { color: #3b82f6; } /* Blue */
+        .step-item:nth-child(2) .step-icon { color: #8b5cf6; } /* Purple */
+        .step-item:nth-child(3) .step-icon { color: #f59e0b; } /* Amber */
+        .step-item:nth-child(4) .step-icon { color: #ef4444; } /* Red */
+        .step-item:nth-child(5) .step-icon { color: #10b981; } /* Emerald */
+    </style>
+</head>
+<body>
+<div class="slide-container">
+<!-- Background Header Decoration -->
+<div class="header-bg"></div>
+<div class="content-wrapper">
+<!-- Header Section -->
+<div>
+<h1 class="text-5xl font-extrabold">Cum aplici în 5 pași simpli</h1>
+<p class="subtitle">
+                Ghid simplificat pentru parcurgerea etapelor Programului Casa Verde, de la înscriere la statutul de prosumator.
+            </p>
+</div>
+<!-- Timeline Section -->
+<div class="timeline-container">
+<!-- Line Background & Progress -->
+<div class="timeline-line"></div>
+<div class="timeline-progress"></div>
+<!-- Step 1 -->
+<div class="step-item">
+<div class="step-icon-wrapper">
+<div class="step-number">1</div>
+<i class="fas fa-user-plus step-icon"></i>
+</div>
+<h3 class="step-title">Creare Cont</h3>
+<p class="step-desc">
+                    Înregistrează-te în platforma AFM înainte de lansarea sesiunii pentru a câștiga timp.
+                </p>
+</div>
+<!-- Step 2 -->
+<div class="step-item">
+<div class="step-icon-wrapper">
+<div class="step-number">2</div>
+<i class="fas fa-file-upload step-icon"></i>
+</div>
+<h3 class="step-title">Încărcare Acte</h3>
+<p class="step-desc">
+                    Încarcă rapid și corect documentele necesare (CI, CF, certificate fiscale) la deschiderea sesiunii.
+                </p>
+</div>
+<!-- Step 3 -->
+<div class="step-item">
+<div class="step-icon-wrapper">
+<div class="step-number">3</div>
+<i class="fas fa-tools step-icon"></i>
+</div>
+<h3 class="step-title">Instalator</h3>
+<p class="step-desc">
+                    Selectează un instalator validat de AFM din lista oficială în termenul prevăzut de ghid.
+                </p>
+</div>
+<!-- Step 4 -->
+<div class="step-item">
+<div class="step-icon-wrapper">
+<div class="step-number">4</div>
+<i class="fas fa-file-signature step-icon"></i>
+</div>
+<h3 class="step-title">Contract &amp; Montaj</h3>
+<p class="step-desc">
+                    Semnează contractul de finanțare, stabilește detaliile tehnice și realizează montajul sistemului.
+                </p>
+</div>
+<!-- Step 5 -->
+<div class="step-item">
+<div class="step-icon-wrapper">
+<div class="step-number">5</div>
+<i class="fas fa-bolt step-icon"></i>
+</div>
+<h3 class="step-title">Prosumator</h3>
+<p class="step-desc">
+                    După recepție și decontare, obține certificatul de racordare pentru a livra surplusul în rețea.
+                </p>
+</div>
+</div>
+<!-- Footer Note -->
+<div class="footer-info">
+<p><i class="fas fa-exclamation-circle mr-1"></i> Timpul de execuție depinde de instalator și de procedurile operatorului de distribuție.</p>
+</div>
+</div>
+</div>
+</body>
+</html>

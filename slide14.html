@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+
+<html lang="ro">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Statistici și Exemple Practice</title>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet"/>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&amp;family=Open+Sans:wght@400;600&amp;display=swap" rel="stylesheet"/>
+<style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Open Sans', sans-serif;
+            background-color: #f3f4f6;
+            color: #333;
+        }
+        .slide-container {
+            width: 1280px;
+            height: 720px;
+            position: relative;
+            overflow: hidden;
+            background-color: #ffffff;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Background Gradient Alternative (Solid Colors + Shapes) */
+        .bg-shape-top {
+            position: absolute;
+            top: -150px;
+            right: -100px;
+            width: 600px;
+            height: 600px;
+            background-color: #ecfdf5; /* emerald-50 */
+            border-radius: 50%;
+            z-index: 0;
+        }
+        .bg-shape-bottom {
+            position: absolute;
+            bottom: -100px;
+            left: -100px;
+            width: 400px;
+            height: 400px;
+            background-color: #f0fdf4; /* green-50 */
+            border-radius: 50%;
+            z-index: 0;
+        }
+
+        .content-wrapper {
+            position: relative;
+            z-index: 10;
+            flex: 1;
+            padding: 50px 70px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        h1 {
+            font-family: 'Montserrat', sans-serif;
+            color: #065f46; /* emerald-800 */
+            margin-bottom: 10px;
+            font-size: 2.25rem; /* text-4xl equivalent */
+            font-weight: 800;
+        }
+
+        .header-line {
+            width: 100px;
+            height: 6px;
+            background-color: #10b981; /* emerald-500 */
+            border-radius: 3px;
+            margin-bottom: 30px;
+        }
+
+        /* Key Number Cards */
+        .key-metrics-row {
+            display: flex;
+            gap: 25px;
+            margin-bottom: 40px;
+        }
+
+        .metric-card {
+            flex: 1;
+            background: white;
+            border-radius: 16px;
+            padding: 20px 15px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            border-top: 5px solid #10b981;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
+            min-height: 160px;
+        }
+
+        .metric-value {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 2.2rem;
+            font-weight: 800;
+            color: #10b981; /* emerald-500 */
+            margin-bottom: 5px;
+            line-height: 1.1;
+        }
+
+        .metric-label {
+            font-size: 0.95rem;
+            font-weight: 600;
+            color: #374151; /* gray-700 */
+            margin-bottom: 8px;
+            min-height: 44px; /* Ensure alignment */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .metric-desc {
+            font-size: 0.8rem;
+            color: #6b7280; /* gray-500 */
+            line-height: 1.4;
+        }
+
+        /* Detailed Section with Chart & List */
+        .details-container {
+            display: flex;
+            gap: 40px;
+            flex: 1;
+            min-height: 0; /* Important for flex child scrolling/sizing */
+        }
+
+        .chart-section {
+            flex: 1.2;
+            background: white;
+            border-radius: 16px;
+            padding: 20px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .chart-title {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: #1f2937;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+
+        .benefits-list-section {
+            flex: 0.8;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .benefit-group {
+            margin-bottom: 25px;
+        }
+
+        .group-title {
+            display: flex;
+            align-items: center;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            font-size: 1.1rem;
+            margin-bottom: 8px;
+            color: #064e3b;
+        }
+
+        .group-icon {
+            margin-right: 12px;
+            width: 32px;
+            height: 32px;
+            background-color: #d1fae5;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #059669;
+            font-size: 1rem;
+        }
+
+        .benefit-text {
+            color: #4b5563;
+            font-size: 0.9rem;
+            line-height: 1.5;
+            padding-left: 44px;
+        }
+
+        .chart-wrapper {
+            flex: 1;
+            position: relative;
+            width: 100%;
+            min-height: 200px;
+        }
+    </style>
+</head>
+<body>
+<div class="slide-container">
+<div class="bg-shape-top"></div>
+<div class="bg-shape-bottom"></div>
+<div class="content-wrapper">
+<div>
+<h1>Statistici și Exemple Practice</h1>
+<div class="header-line"></div>
+</div>
+<!-- Key Metrics Cards -->
+<div class="key-metrics-row">
+<!-- Metric 1 -->
+<div class="metric-card">
+<div class="metric-value">30-50%</div>
+<div class="metric-label">Autoconsum<br/>(Fără Baterie)</div>
+<p class="metric-desc">Pentru o gospodărie de 4 persoane cu PV de 5 kWp, utilizând energia direct la producere.</p>
+</div>
+<!-- Metric 2 -->
+<div class="metric-card" style="border-top-color: #f59e0b;">
+<div class="metric-value" style="color: #f59e0b;">60-80%</div>
+<div class="metric-label">Acoperire ACM<br/>(Apă Caldă)</div>
+<p class="metric-desc">Încălzitor solar presurizat 250L poate acoperi majoritatea nevoilor anuale.</p>
+</div>
+<!-- Metric 3 -->
+<div class="metric-card" style="border-top-color: #3b82f6;">
+<div class="metric-value" style="color: #3b82f6;">4-8 Săpt.</div>
+<div class="metric-label">Autonomie Irigații<br/>(Vara)</div>
+<p class="metric-desc">Un rezervor de 5000L poate susține udarea grădinii în perioadele secetoase.</p>
+</div>
+<!-- Metric 4 -->
+<div class="metric-card" style="border-top-color: #10b981;">
+<div class="metric-value">4-8 Ani</div>
+<div class="metric-label">ROI<br/>(Amortizare)</div>
+<p class="metric-desc">Timp mediu de recuperare a investiției, variabil în funcție de prețul energiei.</p>
+</div>
+</div>
+<!-- Details Section -->
+<div class="details-container">
+<!-- Left: Benefits List -->
+<div class="benefits-list-section">
+<!-- Economic -->
+<div class="benefit-group">
+<div class="group-title">
+<div class="group-icon"><i class="fas fa-home"></i></div>
+<h3>Profil Gospodărie Tipică</h3>
+</div>
+<p class="benefit-text">
+                        O familie de 4 persoane consumă aprox. 4500 kWh/an. Un sistem de 5 kWp produce ~6000 kWh/an. Fără baterie, surplusul se injectează în rețea, iar noaptea se consumă din rețea.
+                    </p>
+</div>
+<!-- Resilience -->
+<div class="benefit-group">
+<div class="group-title">
+<div class="group-icon" style="background-color: #dbeafe; color: #2563eb;"><i class="fas fa-map-marked-alt"></i></div>
+<h3 style="color: #1e3a8a;">Variabilitate &amp; Locație</h3>
+</div>
+<p class="benefit-text">
+                        Performanța reală depinde de orientarea acoperișului (Sud ideal), unghiul de înclinare, umbrire și zona geografică (radiația solară e mai mare în sudul țării).
+                    </p>
+</div>
+</div>
+<!-- Right: Chart Visualization -->
+<div class="chart-section">
+<h3 class="chart-title">Producție PV vs. Consum Tipic (kWh/Lunară)</h3>
+<div class="chart-wrapper">
+<canvas id="prodConsChart"></canvas>
+</div>
+<p class="text-xs text-center text-gray-400 mt-2">*Exemplu estimativ pentru sistem 5kWp în zona de Sud a României.</p>
+</div>
+</div>
+</div>
+</div>
+<script>
+    const ctx = document.getElementById('prodConsChart').getContext('2d');
+    const prodConsChart = new Chart(ctx, {
+        type: 'bar',
+        data: {
+            labels: ['Ian', 'Feb', 'Mar', 'Apr', 'Mai', 'Iun', 'Iul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
+            datasets: [
+                {
+                    label: 'Producție Fotovoltaică (kWh)',
+                    data: [180, 260, 450, 580, 720, 780, 810, 760, 590, 420, 240, 160],
+                    backgroundColor: 'rgba(16, 185, 129, 0.7)', // emerald-500
+                    borderColor: '#10b981',
+                    borderWidth: 1,
+                    borderRadius: 4
+                },
+                {
+                    label: 'Consum Gospodărie (kWh)',
+                    data: [480, 420, 380, 350, 320, 330, 380, 380, 340, 360, 410, 500],
+                    backgroundColor: 'rgba(239, 68, 68, 0.7)', // red-500
+                    borderColor: '#ef4444',
+                    borderWidth: 1,
+                    borderRadius: 4
+                }
+            ]
+        },
+        options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            plugins: {
+                legend: {
+                    position: 'bottom',
+                    labels: {
+                        font: { family: "'Open Sans', sans-serif", size: 10 },
+                        usePointStyle: true,
+                        boxWidth: 8
+                    }
+                },
+                tooltip: {
+                    mode: 'index',
+                    intersect: false,
+                }
+            },
+            scales: {
+                y: {
+                    beginAtZero: true,
+                    title: { display: false },
+                    grid: { color: '#f3f4f6' },
+                    ticks: { font: { size: 10 } }
+                },
+                x: {
+                    grid: { display: false },
+                    ticks: { font: { size: 10 } }
+                }
+            }
+        }
+    });
+</script>
+</body>
+</html>

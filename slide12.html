@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+
+<html lang="ro">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Alte metode de economisire apă</title>
+<link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet"/>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&amp;family=Open+Sans:wght@400;600&amp;display=swap" rel="stylesheet"/>
+<style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Open Sans', sans-serif;
+            background-color: #f3f4f6;
+        }
+        .slide-container {
+            width: 1280px;
+            height: 720px;
+            position: relative;
+            overflow: hidden;
+            background-color: #ffffff;
+            display: flex;
+            flex-direction: row;
+        }
+        /* Left Panel - Image/Brand */
+        .left-panel {
+            width: 35%;
+            height: 100%;
+            position: relative;
+            overflow: hidden;
+        }
+        .bg-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 1;
+        }
+        .left-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(6, 95, 70, 0.85); /* emerald-800 */
+            z-index: 2;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 40px;
+            color: white;
+        }
+        /* Right Panel - Content */
+        .right-panel {
+            width: 65%;
+            height: 100%;
+            padding: 40px 60px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            background-color: #f9fafb; /* gray-50 */
+        }
+        h1 {
+            font-family: 'Montserrat', sans-serif;
+            color: #064e3b; /* emerald-900 */
+        }
+        h2 {
+            font-family: 'Montserrat', sans-serif;
+        }
+        .checklist-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 16px;
+            background-color: white;
+            padding: 14px;
+            border-radius: 12px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            transition: transform 0.2s ease;
+            border-left: 5px solid transparent;
+        }
+        .checklist-item:hover {
+            transform: translateX(5px);
+            border-left-color: #3b82f6; /* blue-500 changed to blue for water theme variation */
+        }
+        .check-icon {
+            width: 32px;
+            height: 32px;
+            background-color: #dbeafe; /* blue-100 */
+            color: #2563eb; /* blue-600 */
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 16px;
+            flex-shrink: 0;
+            font-size: 16px;
+        }
+        .item-content h3 {
+            margin: 0 0 4px 0;
+            font-size: 1.05rem;
+            color: #1f2937; /* gray-800 */
+            font-weight: 600;
+        }
+        .item-content p {
+            margin: 0;
+            font-size: 0.9rem;
+            color: #4b5563; /* gray-600 */
+            line-height: 1.4;
+        }
+        /* Scrollbar customization */
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 6px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: #f1f1f1; 
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #cbd5e1; 
+            border-radius: 3px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+            background: #94a3b8; 
+        }
+    </style>
+</head>
+<body>
+<div class="slide-container">
+<!-- Left Panel with Image & Title Summary -->
+<div class="left-panel">
+<img alt="Watering plants in garden" class="bg-image" src="https://page.gensparksite.com/slides_images/92cea380430d9e3dbc1314dd520226cd.webp"/>
+<div class="left-overlay">
+<div class="mb-6">
+<i class="fas fa-hand-holding-water text-5xl text-blue-300 mb-4"></i>
+<h2 class="text-4xl font-bold mb-2">Economisire Apă</h2>
+<div class="w-16 h-1 bg-blue-400 rounded"></div>
+</div>
+<p class="text-lg text-gray-200 leading-relaxed">
+                    Descoperă metode suplimentare și eficiente pentru reducerea consumului de apă, de la instalații sanitare moderne la tehnici inteligente de irigare pentru grădină.
+                </p>
+<div class="mt-auto pt-8 border-t border-green-700 text-sm text-green-200">
+<p><i class="fas fa-leaf mr-2"></i> Fiecare picătură contează pentru mediu și buget.</p>
+</div>
+</div>
+</div>
+<!-- Right Panel with Checklist -->
+<div class="right-panel">
+<div class="mb-6">
+<h1 class="text-4xl font-extrabold mb-2 text-gray-900">Alte Metode de Economisire</h1>
+<p class="text-gray-500 text-lg">Soluții practice pentru interior și exterior</p>
+</div>
+<div class="flex flex-col flex-1 overflow-y-auto pr-2 custom-scrollbar">
+<!-- Item 1 -->
+<div class="checklist-item">
+<div class="check-icon">
+<i class="fas fa-faucet"></i>
+</div>
+<div class="item-content">
+<h3>Baterii și WC-uri Economice</h3>
+<p>Instalează aeratoare pentru baterii și rezervoare WC cu sistem dual-flush pentru a reduce debitul cu până la 50%.</p>
+</div>
+</div>
+<!-- Item 2 -->
+<div class="checklist-item">
+<div class="check-icon">
+<i class="fas fa-wrench"></i>
+</div>
+<div class="item-content">
+<h3>Detectare Scurgeri</h3>
+<p>Verifică periodic instalațiile. Un robinet care picură sau un rezervor neetanș poate irosi zeci de litri lunar.</p>
+</div>
+</div>
+<!-- Item 3 -->
+<div class="checklist-item">
+<div class="check-icon">
+<i class="fas fa-seedling"></i>
+</div>
+<div class="item-content">
+<h3>Irigare prin Picurare</h3>
+<p>Utilizează sisteme de irigare prin picurare pentru a livra apa direct la rădăcina plantelor, minimizând risipa.</p>
+</div>
+</div>
+<!-- Item 4 -->
+<div class="checklist-item">
+<div class="check-icon">
+<i class="fas fa-clock"></i>
+</div>
+<div class="item-content">
+<h3>Programare Udare</h3>
+<p>Udă grădina dimineața devreme sau seara târziu pentru a reduce evaporarea apei cauzată de căldura solară.</p>
+</div>
+</div>
+<!-- Item 5 -->
+<div class="checklist-item">
+<div class="check-icon">
+<i class="fas fa-recycle"></i>
+</div>
+<div class="item-content">
+<h3>Refolosire Apă Gri</h3>
+<p>Colectează apa de la spălatul fructelor sau legumelor pentru a uda plantele de interior sau din grădină.</p>
+</div>
+</div>
+<!-- Item 6 -->
+<div class="checklist-item">
+<div class="check-icon">
+<i class="fas fa-tools"></i>
+</div>
+<div class="item-content">
+<h3>Întreținere Filtre</h3>
+<p>Curăță periodic filtrele sistemelor de apă și irigații pentru a menține presiunea optimă și a preveni blocajele.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</body>
+</html>

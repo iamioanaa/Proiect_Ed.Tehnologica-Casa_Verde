@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="ro" data-theme="light" style=""><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Concluzie și Pași Următori</title>
+<link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&amp;family=Open+Sans:wght@400;600&amp;display=swap" rel="stylesheet">
+<style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Open Sans', sans-serif;
+            background-color: #f3f4f6;
+            color: #333;
+        }
+        .slide-container {
+            width: 1280px;
+            height: 720px;
+            position: relative;
+            overflow: hidden;
+            background-color: #ffffff;
+            display: flex;
+            flex-direction: row;
+        }
+
+        /* Left Section - Summary */
+        .left-section {
+            width: 60%;
+            height: 100%;
+            padding: 60px 50px 60px 80px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            background-color: #ffffff;
+            position: relative;
+            z-index: 10;
+        }
+
+        /* Right Section - CTA */
+        .right-section {
+            width: 40%;
+            height: 100%;
+            background-color: #065f46; /* emerald-800 */
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 60px;
+            position: relative;
+            color: white;
+            clip-path: polygon(10% 0, 100% 0, 100% 100%, 0% 100%);
+        }
+
+        h1 {
+            font-family: 'Montserrat', sans-serif;
+            color: #064e3b; /* emerald-900 */
+            line-height: 1.1;
+            margin-bottom: 30px;
+        }
+
+        .summary-list {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .summary-item {
+            display: flex;
+            align-items: flex-start;
+            padding: 15px;
+            border-radius: 12px;
+            background-color: #f9fafb;
+            border-left: 5px solid #10b981; /* emerald-500 */
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            transition: transform 0.2s ease;
+        }
+        .summary-item:hover {
+            transform: translateX(5px);
+            background-color: #ecfdf5;
+        }
+
+        .item-icon {
+            font-size: 1.4rem;
+            color: #059669;
+            margin-right: 15px;
+            margin-top: 2px;
+            width: 30px;
+            text-align: center;
+        }
+
+        .item-content h3 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            color: #1f2937;
+            margin: 0 0 4px 0;
+            font-size: 1.1rem;
+        }
+        
+        .item-content p {
+            margin: 0;
+            color: #4b5563;
+            font-size: 0.95rem;
+            line-height: 1.4;
+        }
+
+        /* CTA Box Styles */
+        .cta-box {
+            background-color: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 20px;
+            padding: 40px 30px;
+            text-align: center;
+            width: 100%;
+            max-width: 400px;
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.2), 0 10px 10px -5px rgba(0, 0, 0, 0.1);
+        }
+
+        .cta-icon {
+            font-size: 3.5rem;
+            color: #34d399; /* emerald-400 */
+            margin-bottom: 20px;
+        }
+
+        .cta-title {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.8rem;
+            font-weight: 800;
+            margin-bottom: 15px;
+            color: #ffffff;
+        }
+
+        .cta-text {
+            color: #d1fae5; /* emerald-100 */
+            font-size: 1rem;
+            margin-bottom: 30px;
+            line-height: 1.5;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background-color: #10b981; /* emerald-500 */
+            color: white;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            font-size: 1.1rem;
+            padding: 15px 35px;
+            border-radius: 50px;
+            text-decoration: none;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }
+        .cta-button:hover {
+            background-color: #059669; /* emerald-600 */
+            transform: translateY(-2px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.3);
+        }
+
+        .decoration-circle {
+            position: absolute;
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            background-color: rgba(255,255,255,0.05);
+            top: -50px;
+            right: -50px;
+        }
+        
+        .contact-info {
+            margin-top: 30px;
+            font-size: 0.9rem;
+            color: #d1fae5;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+        }
+    </style>
+</head>
+<body style="">
+<div class="slide-container">
+<!-- Left Section: Recommendations -->
+<div class="left-section">
+<h1 class="text-4xl font-extrabold">Concluzie și Pași Următori</h1>
+<p class="text-gray-500 text-lg mb-8">Recomandări practice pentru un parcurs de succes în programul Casa Verde.</p>
+<div class="summary-list">
+<!-- Item 1 -->
+<div class="summary-item">
+<div class="item-icon"><i class="fas fa-file-contract"></i></div>
+<div class="item-content">
+<h3>Pregătire Documentație</h3>
+<p>Verifică valabilitatea actelor (CF, certificate fiscale) și scanează-le clar înainte de lansarea sesiunii.</p>
+</div>
+</div>
+<!-- Item 2 -->
+<div class="summary-item">
+<div class="item-icon"><i class="fas fa-solar-panel"></i></div>
+<div class="item-content">
+<h3>Dimensionare &amp; Hibrid-Ready</h3>
+<p>Alege un sistem de 3-10 kW adaptat consumului real. Optează pentru invertoare hibride pregătite pentru baterii.</p>
+</div>
+</div>
+<!-- Item 3 -->
+<div class="summary-item">
+<div class="item-icon"><i class="fas fa-user-check"></i></div>
+<div class="item-content">
+<h3>Instalator Validat</h3>
+<p>Selectează un partener autorizat AFM cu experiență, care oferă consultanță tehnică și suport post-instalare.</p>
+</div>
+</div>
+<!-- Item 4 -->
+<div class="summary-item">
+<div class="item-icon"><i class="fas fa-chart-line"></i></div>
+<div class="item-content">
+<h3>Eficiență Integrată</h3>
+<p>Maximizează investiția prin măsuri complementare: izolație, LED-uri, termostate inteligente și colectare apă pluvială.</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Right Section: Call to Action -->
+<div class="right-section">
+<div class="decoration-circle"></div>
+<div class="cta-box">
+<i class="fas fa-clipboard-check cta-icon"></i>
+<h2 class="cta-title">Acționează Acum!</h2>
+<p class="cta-text">
+                    Nu aștepta ultimul moment. Fă primul pas către independența energetică și un viitor sustenabil.
+                </p>
+<a class="cta-button" href="#">
+                    Solicită Audit Gratuit <i class="fas fa-arrow-right ml-2"></i>
+</a>
+<p class="contact-info" style="color: rgb(209, 250, 229);">
+<span><i class="fas fa-globe mr-2"></i>www.afm.ro</span>
+</p>
+</div>
+<div class="absolute bottom-6 text-emerald-200 text-xs text-center opacity-60">
+<p>*Verificați periodic ghidul oficial pentru actualizări legislative.</p>
+</div>
+</div>
+</div>
+
+</body></html>

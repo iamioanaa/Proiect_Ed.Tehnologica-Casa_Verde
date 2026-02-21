@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+
+<html lang="ro">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Implementare Colectare Apă de Ploaie - Timeline</title>
+<link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet"/>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&amp;family=Open+Sans:wght@400;600&amp;display=swap" rel="stylesheet"/>
+<style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Open Sans', sans-serif;
+            background-color: #f3f4f6;
+            color: #333;
+        }
+        .slide-container {
+            width: 1280px;
+            height: 720px;
+            position: relative;
+            overflow: hidden;
+            background-color: #ffffff;
+            display: flex;
+            flex-direction: column;
+        }
+        /* Top Background Decoration */
+        .header-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 240px;
+            background-color: #ecfdf5; /* emerald-50 */
+            z-index: 0;
+            border-bottom-right-radius: 50% 100px;
+            border-bottom-left-radius: 50% 100px;
+        }
+        .content-wrapper {
+            position: relative;
+            z-index: 10;
+            flex: 1;
+            padding: 50px 60px;
+            display: flex;
+            flex-direction: column;
+        }
+        h1 {
+            font-family: 'Montserrat', sans-serif;
+            color: #065f46; /* emerald-800 */
+            margin-bottom: 10px;
+            text-align: center;
+            font-size: 3rem;
+            font-weight: 800;
+        }
+        .subtitle {
+            text-align: center;
+            color: #4b5563; /* gray-600 */
+            font-size: 1.2rem;
+            margin-bottom: 60px;
+            max-width: 900px;
+            margin-left: auto;
+            margin-right: auto;
+            line-height: 1.5;
+        }
+        /* Timeline Container */
+        .timeline-container {
+            flex: 1;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            position: relative;
+            padding: 0 20px;
+            margin-top: 10px;
+        }
+        /* Connecting Line */
+        .timeline-line {
+            position: absolute;
+            top: 50px; /* Aligned with icon center */
+            left: 90px;
+            right: 90px;
+            height: 4px;
+            background-color: #e5e7eb; /* gray-200 */
+            z-index: 0;
+        }
+        .timeline-progress {
+            position: absolute;
+            top: 50px;
+            left: 90px;
+            width: 0%; /* Can be animated */
+            height: 4px;
+            background-color: #0ea5e9; /* sky-500 (water theme) */
+            z-index: 1;
+            transition: width 1s ease-in-out;
+            animation: progress-fill 2s forwards;
+        }
+        @keyframes progress-fill {
+            to { width: 85%; }
+        }
+
+        /* Timeline Step */
+        .step-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            position: relative;
+            z-index: 2;
+            width: 200px;
+            text-align: center;
+        }
+        .step-icon-wrapper {
+            width: 100px;
+            height: 100px;
+            background-color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            border: 4px solid #fff;
+            position: relative;
+            transition: transform 0.3s ease;
+        }
+        .step-item:hover .step-icon-wrapper {
+            transform: translateY(-5px);
+            border-color: #e0f2fe; /* sky-100 */
+        }
+        .step-number {
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 30px;
+            height: 30px;
+            background-color: #0284c7; /* sky-600 */
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 14px;
+            border: 2px solid white;
+        }
+        .step-icon {
+            font-size: 36px;
+            color: #0ea5e9; /* sky-500 */
+        }
+        .step-title {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            color: #1f2937; /* gray-800 */
+            margin-bottom: 8px;
+            font-size: 1.1rem;
+            line-height: 1.3;
+        }
+        .step-desc {
+            font-size: 0.9rem;
+            color: #6b7280; /* gray-500 */
+            line-height: 1.4;
+        }
+        /* Footer Info */
+        .footer-info {
+            margin-top: auto;
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid #f3f4f6;
+            color: #9ca3af;
+            font-size: 0.85rem;
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+        }
+        /* Specific Icon Colors for visual distinction based on Water Cycle/Eco Theme */
+        .step-item:nth-child(1) .step-icon { color: #d97706; } /* Amber (Leaves/Roof) */
+        .step-item:nth-child(2) .step-icon { color: #6366f1; } /* Indigo (Filter) */
+        .step-item:nth-child(3) .step-icon { color: #0891b2; } /* Cyan (Tank) */
+        .step-item:nth-child(4) .step-icon { color: #ef4444; } /* Red (Pump/Action) */
+        .step-item:nth-child(5) .step-icon { color: #10b981; } /* Emerald (Usage/Garden) */
+        
+        /* Overwrite number colors to match icons */
+        .step-item:nth-child(1) .step-number { background-color: #b45309; }
+        .step-item:nth-child(2) .step-number { background-color: #4f46e5; }
+        .step-item:nth-child(3) .step-number { background-color: #0e7490; }
+        .step-item:nth-child(4) .step-number { background-color: #b91c1c; }
+        .step-item:nth-child(5) .step-number { background-color: #059669; }
+    </style>
+</head>
+<body>
+<div class="slide-container">
+<!-- Background Header Decoration -->
+<div class="header-bg"></div>
+<div class="content-wrapper">
+<!-- Header Section -->
+<div>
+<h1>Implementare Colectare Apă de Ploaie</h1>
+<p class="subtitle">
+                5 pași esențiali pentru a transforma apa pluvială într-o resursă gratuită pentru grădină și sanitare.
+            </p>
+</div>
+<!-- Timeline Section -->
+<div class="timeline-container">
+<!-- Line Background & Progress -->
+<div class="timeline-line"></div>
+<div class="timeline-progress"></div>
+<!-- Step 1 -->
+<div class="step-item">
+<div class="step-icon-wrapper">
+<div class="step-number">1</div>
+<i class="fas fa-house-chimney step-icon"></i>
+</div>
+<h3 class="step-title">Acoperiș &amp; Jgheaburi</h3>
+<p class="step-desc">
+                    Curățarea suprafeței și instalarea de site anti-frunze pentru a preveni colmatarea scurgerilor.
+                </p>
+</div>
+<!-- Step 2 -->
+<div class="step-item">
+<div class="step-icon-wrapper">
+<div class="step-number">2</div>
+<i class="fas fa-filter step-icon"></i>
+</div>
+<h3 class="step-title">Colector &amp; Filtru</h3>
+<p class="step-desc">
+                    Montarea unui colector la burlan cu filtru „prima ploaie” pentru eliminarea impurităților grosiere.
+                </p>
+</div>
+<!-- Step 3 -->
+<div class="step-item">
+<div class="step-icon-wrapper">
+<div class="step-number">3</div>
+<i class="fas fa-database step-icon"></i>
+</div>
+<h3 class="step-title">Rezervor Stocare</h3>
+<p class="step-desc">
+                    Instalarea unui rezervor (terestru sau îngropat) dimensionat corect, cu preaplin și protecție UV.
+                </p>
+</div>
+<!-- Step 4 -->
+<div class="step-item">
+<div class="step-icon-wrapper">
+<div class="step-number">4</div>
+<i class="fas fa-gears step-icon"></i>
+</div>
+<h3 class="step-title">Pompare &amp; Tratare</h3>
+<p class="step-desc">
+                    Sistem de pompare (hidrofor) și filtre fine pentru a asigura presiunea și calitatea necesară.
+                </p>
+</div>
+<!-- Step 5 -->
+<div class="step-item">
+<div class="step-icon-wrapper">
+<div class="step-number">5</div>
+<i class="fas fa-faucet-drip step-icon"></i>
+</div>
+<h3 class="step-title">Distribuție</h3>
+<p class="step-desc">
+                    Conectare la rețeaua dedicată pentru irigații, spălare pavaj sau rezervoare WC (apă nepotabilă).
+                </p>
+</div>
+</div>
+<!-- Footer Note -->
+<div class="footer-info">
+<p><i class="fas fa-exclamation-triangle mr-1"></i> <strong>Important:</strong> Rețeaua de apă pluvială trebuie separată complet de cea de apă potabilă.</p>
+<p><i class="fas fa-snowflake mr-1"></i> <strong>Iarna:</strong> Sistemele supraterane neizolate trebuie golite pentru a preveni înghețul.</p>
+</div>
+</div>
+</div>
+</body>
+</html>

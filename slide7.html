@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="ro" data-theme="light" style=""><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Panouri Fotovoltaice: Beneficii vs Costuri</title>
+<link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&amp;family=Open+Sans:wght@400;600&amp;display=swap" rel="stylesheet">
+<style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Open Sans', sans-serif;
+            background-color: #f3f4f6;
+            color: #333;
+        }
+        .slide-container {
+            width: 1280px;
+            height: 720px;
+            position: relative;
+            overflow: hidden;
+            background-color: #ffffff;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        /* Background Decoration */
+        .bg-split {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            width: 50%;
+            height: 100%;
+            background-color: #f8fafc; /* slate-50 */
+            z-index: 0;
+            border-left: 2px dashed #e2e8f0;
+        }
+
+        .content-wrapper {
+            position: relative;
+            z-index: 10;
+            flex: 1;
+            padding: 50px 80px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        h1 {
+            font-family: 'Montserrat', sans-serif;
+            color: #1e293b; /* slate-800 */
+            text-align: center;
+            margin-bottom: 10px;
+        }
+
+        .subtitle {
+            text-align: center;
+            color: #64748b; /* slate-500 */
+            font-size: 1.2rem;
+            margin-bottom: 40px;
+        }
+
+        /* Comparison Columns */
+        .comparison-container {
+            flex: 1;
+            display: flex;
+            gap: 60px;
+            align-items: stretch;
+        }
+
+        .column {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .column-header {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            padding-bottom: 20px;
+            border-bottom: 4px solid;
+            margin-bottom: 30px;
+        }
+        .header-green { border-color: #10b981; }
+        .header-blue { border-color: #3b82f6; }
+
+        .column-icon {
+            width: 50px;
+            height: 50px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+        }
+        .icon-green { background-color: #d1fae5; color: #059669; }
+        .icon-blue { background-color: #dbeafe; color: #2563eb; }
+
+        .column-title {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #334155;
+        }
+
+        /* List Items */
+        .benefit-item, .cost-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 25px;
+            background-color: white;
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+            transition: transform 0.2s ease;
+        }
+        .benefit-item:hover, .cost-item:hover {
+            transform: translateX(5px);
+        }
+
+        .item-icon {
+            margin-right: 15px;
+            font-size: 1.2rem;
+            margin-top: 3px;
+        }
+        .check-icon { color: #10b981; }
+        .info-icon { color: #3b82f6; }
+
+        .item-content h3 {
+            margin: 0 0 5px 0;
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #1e293b;
+        }
+        .item-content p {
+            margin: 0;
+            font-size: 0.95rem;
+            color: #64748b;
+            line-height: 1.5;
+        }
+
+        /* VS Badge */
+        .vs-badge {
+            position: absolute;
+            top: 55%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 60px;
+            height: 60px;
+            background-color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 800;
+            font-size: 1.2rem;
+            color: #94a3b8;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            border: 4px solid #f1f5f9;
+            z-index: 20;
+        }
+        
+        .highlight-green { color: #059669; font-weight: 700; }
+        .highlight-blue { color: #2563eb; font-weight: 700; }
+    </style>
+</head>
+<body style="">
+<div class="slide-container">
+<!-- Split Background -->
+<div class="bg-split"></div>
+<!-- VS Badge -->
+<div class="vs-badge">VS</div>
+<div class="content-wrapper" style="transform: translate(-4.4217px, -39.7953px);">
+<!-- Header -->
+<div style="position: relative; transform: translate(0px, -19.1607px); font-size: 12px;">
+<h1 class="text-4xl font-extrabold"><span style="font-size: 28px;">Panouri Fotovoltaice: Analiză Comparativă</span></h1>
+<p class="subtitle"><span style="font-size: 28px;">
+                </span><span style="font-size: 22px;">D</span><span style="font-size: 22px;">e</span><span style="font-size: 22px;"> ce merită investiția? Balanța între beneficiile pe termen lung și costurile inițiale.</span>
+            </p>
+</div>
+<!-- Comparison Content -->
+<div class="comparison-container">
+<!-- Left Column: Beneficii -->
+<div class="column">
+<div class="column-header header-green" style="position: relative; transform: translate(-10.3173px, -35.3736px);">
+<div class="column-icon icon-green">
+<i class="fas fa-thumbs-up"></i>
+</div>
+<h2 class="column-title">Beneficii Majore</h2>
+</div>
+<div class="flex-1" style="position: relative; transform: translate(-5.8956px, -38.3214px);">
+<!-- Item 1 -->
+<div class="benefit-item">
+<i class="fas fa-check-circle item-icon check-icon"></i>
+<div class="item-content">
+<h3>Reducere Factură 50-90%</h3>
+<p>Scade drastic costurile lunare cu electricitatea, în funcție de autoconsum și dimensionare.</p>
+</div>
+</div>
+<!-- Item 2 -->
+<div class="benefit-item">
+<i class="fas fa-bolt item-icon check-icon"></i>
+<div class="item-content">
+<h3>Prosumator &amp; Venituri</h3>
+<p>Injectezi surplusul în rețea și primești compensare cantitativă sau financiară (după legislație).</p>
+</div>
+</div>
+<!-- Item 3 -->
+<div class="benefit-item">
+<i class="fas fa-shield-alt item-icon check-icon"></i>
+<div class="item-content">
+<h3>Independență Energetică</h3>
+<p>Te protejezi de fluctuațiile prețurilor la energie și câștigi autonomie parțială.</p>
+</div>
+</div>
+<!-- Item 4 -->
+<div class="benefit-item">
+<i class="fas fa-leaf item-icon check-icon"></i>
+<div class="item-content">
+<h3>Impact Ecologic Pozitiv</h3>
+<p>Reduci amprenta de carbon a locuinței; energie 100% verde și regenerabilă.</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Right Column: Costuri & Considerente -->
+<div class="column">
+<div class="column-header header-blue" style="position: relative; transform: translate(-5.8956px, -33.8997px);">
+<div class="column-icon icon-blue">
+<i class="fas fa-coins"></i>
+</div>
+<h2 class="column-title">Costuri &amp; Considerente</h2>
+</div>
+<div class="flex-1">
+<!-- Item 1 -->
+<div class="cost-item" style="position: relative; transform: translate(-1.4739px, -39.7953px);">
+<i class="fas fa-wallet item-icon info-icon"></i>
+<div class="item-content">
+<h3>Investiție Inițială</h3>
+<p>Necesită o contribuție proprie minimă (cca. 10%) pe lângă finanțarea AFM.</p>
+</div>
+</div>
+<!-- Item 2 -->
+<div class="cost-item" style="position: relative; transform: translate(-7.3695px, -45.6909px);">
+<i class="fas fa-clock item-icon info-icon"></i>
+<div class="item-content">
+<h3>Amortizare Investiție</h3>
+<p>Investiția se recuperează tipic în <span class="highlight-blue">4-8 ani</span>, în funcție de prețul energiei și consum.</p>
+</div>
+</div>
+<!-- Item 3 -->
+<div class="cost-item" style="position: relative; transform: translate(-1.4739px, -42.7431px);">
+<i class="fas fa-tools item-icon info-icon"></i>
+<div class="item-content">
+<h3>Mentenanță Minimă</h3>
+<p>Necesită curățare periodică și monitorizare, costuri de operare foarte reduse.</p>
+</div>
+</div>
+<!-- Item 4 -->
+<div class="cost-item" style="position: relative; transform: translate(-4.4217px, -41.2692px);">
+<i class="fas fa-ruler-combined item-icon info-icon"></i>
+<div class="item-content">
+<h3 style="position: relative; transform: translate(-1.4739px, -2.9478px);">Dimensionare Corectă</h3>
+<p>Esențial: 3-10 kWp adaptați la consumul real, branșament (mono/trifazat) și orientare.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+</body></html>
