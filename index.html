@@ -7,3 +7,27 @@
     <iframe src="slide1.html" width="100%" height="100%" style="border:none;"></iframe>
 </body>
 </html>
+<script>
+let slideIndex = 0;
+let slides = document.querySelectorAll(".slide");
+
+function showSlide(n) {
+  if (n >= slides.length) slideIndex = 0;
+  if (n < 0) slideIndex = slides.length - 1;
+
+  slides.forEach(slide => slide.style.display = "none");
+  slides[slideIndex].style.display = "block";
+}
+
+function nextSlide() {
+  slideIndex++;
+  showSlide(slideIndex);
+}
+
+function prevSlide() {
+  slideIndex--;
+  showSlide(slideIndex);
+}
+
+showSlide(slideIndex);
+</script>
